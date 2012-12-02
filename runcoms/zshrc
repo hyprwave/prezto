@@ -27,16 +27,6 @@ alias prettycode="astyle --style=kr -H -p -k3"
 #alias rm="rm -I"
 alias dirsize="du -sh"
 alias xstart="exec startx"
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
-#Fixing Home, End, Insert and Delete
-typeset -A key
-key[Home]=${terminfo[khome]}
-key[End]=${terminfo[kend]}
-key[Insert]=${terminfo[kich1]}
-key[Delete]=${terminfo[kdch1]}
-[[ -n "${key[Home]}"    ]]  && bindkey  "${key[Home]}"    beginning-of-line
-[[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
-[[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
-[[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 setopt interactivecomments

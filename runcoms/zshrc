@@ -27,6 +27,7 @@ alias prettycode="astyle --style=kr -H -p -k3"
 #alias rm="rm -I"
 alias dirsize="du -sh"
 alias xstart="exec startx"
+alias gti=git
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 setopt interactivecomments
